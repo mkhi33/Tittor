@@ -1,5 +1,14 @@
+
+var url = window.location.href;
+var swLocation = '/Tittor/sw.js'
+
 if(navigator.serviceWorker) {
-    navigator.serviceWorker.register('/sw.js')
+
+    if(url.includes('localhost')) {
+        swLocation = '/sw.sj'
+    }
+
+    navigator.serviceWorker.register(swLocation)
 }
 
 
